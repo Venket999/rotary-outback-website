@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet Greg Marlow, District Governor for 2025-26. See how his Bed Project transforms plastic waste into dignity for remote Australian communities.">
+    <title>Greg Marlow — Rotary District Governor & Social Innovation Leader</title>
+    
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* VARIABLES & TYPOGRAPHY */
+        :root {
+            --primary-blue: #003366;
+            --accent-gold: #D4AF37;
+            --light-bg: #F5F7FA;
+            --dark-text: #1A1A1A;
+            --medium-text: #4A4A4A;
+            --light-text: #757575;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+        h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+
+        p { color: var(--medium-text); font-size: 1.05rem; }
+        
+        .text-muted-custom { color: var(--light-text); }
+
+        /* HERO SECTION */
+        .hero-leader {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-leader::before {
+            content: '';
+            position: absolute;
+            right: -100px;
+            top: -100px;
+            width: 400px;
+            height: 400px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-leader-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-leader-image {
+            position: relative;
+        }
+
+        .hero-leader-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-leader-text h1 {
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            padding: 14px 32px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-hero-primary:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-hero-secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        /* RESPONSIVE HERO */
+        @media (max-width: 768px) {
+            .hero-leader-content {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 1.8rem; }
+            .hero-tagline { font-size: 1.1rem; }
+        }
+
+        /* INTRODUCTION SECTION */
+        .section-intro {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .intro-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* PROJECTS GRID */
+        .section-projects {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .project-meta span {
+            background: var(--light-bg);
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: var(--medium-text);
+        }
+
+        .project-section-header {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-cta {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-blue);
+        }
+
+        .project-cta:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        /* IMPACT STATS */
+        .section-stats {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 12px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--medium-text);
+            font-weight: 500;
+        }
+
+        /* PERSONAL STORY */
+        .section-story {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+            color: white;
+        }
+
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin: 2rem 0;
+            opacity: 0.95;
+        }
+
+        .story-attribution {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        /* DONATION SECTION */
+        .section-support {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .support-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .donation-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .donation-tier {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .donation-tier:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .donation-label {
+            color: var(--medium-text);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .donation-benefits {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        .donation-benefits li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--medium-text);
+        }
+
+        .donation-benefits li:before {
+            content: "✓ ";
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .btn-donate {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .btn-donate:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .monthly-support {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border: 2px dashed var(--primary-blue);
+        }
+
+        .monthly-support h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .monthly-support p {
+            color: var(--medium-text);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        /* FOOTER CTA */
+        .footer-cta {
+            background: var(--light-bg);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 2px solid var(--primary-blue);
+        }
+
+        .footer-cta h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        /* UTILITY CLASSES */
+        .mt-4 { margin-top: 2rem; }
+        .mb-4 { margin-bottom: 2rem; }
+        .px-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .container-lg { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    </style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero-leader">
+    <div class="container-lg">
+        <div class="hero-leader-content">
+            <div class="hero-leader-image">
+                <img src="/img/leaders/greg-marlow.jpg" alt="Greg Marlow, District Governor">
+            </div>
+            <div class="hero-leader-text">
+                <h1>Greg Marlow: Building Dignity Through Innovation</h1>
+                <p class="hero-tagline">District Governor 2025-26 | 30+ Years in Rotary</p>
+                <p class="hero-subtitle">Transforming plastic waste into safe sleeping spaces for remote Australian communities.</p>
+                <div class="hero-buttons">
+                    <a href="#donate" class="btn-hero-primary">Support the Bed Project</a>
+                    <a href="#learn-more" class="btn-hero-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="section-intro" id="learn-more">
+    <div class="container-lg">
+        <div class="intro-content">
+            <p>Greg Marlow's Rotary journey began in 1987 in Kalgoorlie, Western Australia—three decades ago. Today, as District Governor and champion of the Bed Project, he's turned a simple idea into a global initiative: transforming plastic waste into safe, durable beds for remote Australian communities.</p>
+
+            <p>What started with a two-year recession-driven unemployment didn't break him. Instead, it taught him resilience. That lesson became his superpower in Rotary. Over six terms as Club President in Tennant Creek, then as District Rotary Foundation Chair, and now steering an entire region, Greg has built a reputation for turning vision into impact.</p>
+
+            <p><em>"The Bed Project isn't about charity,"</em> Greg says. <em>"It's about dignity, sustainability, and proving that Australian innovation can solve problems others ignore."</em></p>
+
+            <p>Today, that vision has already created 100+ beds across Palm Island, Mt Isa, Tennant Creek, and Kalgoorlie. But Greg isn't stopping there. He's currently raising $67,816 USD to scale to 200 beds—providing safe sleeping conditions for 200+ people while creating local employment and reducing environmental waste.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="section-projects">
+    <div class="container-lg">
+        <h2>The Bed Project: Transforming Plastic Into Dignity</h2>
+
+        <div class="project-card">
+            <h3>The Problem</h3>
+            <p>Remote Australian communities often lack access to basic bedding. Damp climates and inadequate sleeping surfaces lead to health issues, particularly respiratory illness and skin conditions in vulnerable populations.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>The Solution</h3>
+            <p>The Bed Project manufactures durable beds from recycled plastic, complete with washable, waterproof mattress components. Each bed is designed with community input and built locally—creating jobs, skills, and pride of ownership.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Current Impact</h3>
+            <ul style="list-style: none; padding: 0; color: var(--medium-text);">
+                <li><strong>✓ 100+ beds</strong> installed across 4 regions</li>
+                <li><strong>✓ 200+ people</strong> with improved sleeping conditions</li>
+                <li><strong>✓ 15+ local jobs</strong> created through assembly & maintenance</li>
+                <li><strong>✓ 2,000+ kg</strong> of plastic diverted from landfill</li>
+            </ul>
+        </div>
+
+        <div class="project-card" style="border-left-color: var(--accent-gold);">
+            <h3 style="color: var(--accent-gold);">Next Phase</h3>
+            <p>To reach 200 beds and establish permanent maintenance programs across 8 districts, we need to raise <strong>$67,816 USD</strong>. Every $500 funds one bed + training + support.</p>
+            <a href="#donate" class="project-cta">Donate Now</a>
+        </div>
+    </div>
+</section>
+
+<!-- IMPACT STATS -->
+<section class="section-stats">
+    <div class="container-lg">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Greg's Impact by the Numbers</h2>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Years in Rotary</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Terms as Club President</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Beds Installed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$850K+</div>
+                <div class="stat-label">Mobilized for Rotary Programs</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PERSONAL STORY -->
+<section class="section-story">
+    <div class="story-container">
+        <h2 style="color: white; margin-bottom: 2rem;">Why This Matters</h2>
+        <p class="story-quote">
+            "During my third trip to Timor, I watched children sleep on floors, developing infections that could have been prevented with a simple bed. That's when I understood: Rotary's purpose is to see a problem and refuse to accept it. The Bed Project is my answer to that call."
+        </p>
+        <p class="story-attribution">— Greg Marlow, District Governor</p>
+    </div>
+</section>
+
+<!-- DONATION SECTION -->
+<section class="section-support" id="donate">
+    <div class="support-container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Support Greg's Work</h2>
+        
+        <div class="donation-tiers">
+            <div class="donation-tier">
+                <div class="donation-amount">$50</div>
+                <div class="donation-label">Quick Support</div>
+                <ul class="donation-benefits">
+                    <li>One-time gift</li>
+                    <li>Immediate impact</li>
+                    <li>Thank you email</li>
+                </ul>
+                <button class="btn-donate" onclick="alert('Redirecting to donation platform...')">
+                    Donate $50
+                </button>
+            </div>
+
+            <div class="donation-tier">
+                <div class="donation-amount">$250</div>
+                <div class="donation-label">Sponsor a Bed</div>
+                <ul class="donation-benefits">
+                    <li>Funds one complete bed</li>
+                    <li>Thank you certificate</li>
+                    <li>Project updates</li>
+                    <li>Quarterly report</li>
+                </ul>
+                <button class="btn-donate" style="background: var(--accent-gold); color: var(--primary-blue);" onclick="alert('Redirecting to donation platform...')">
+                    Sponsor a Bed
+                </button>
+            </div>
+
+            <div class="donation-tier">
+                <div class="donation-amount">$1000+</div>
+                <div class="donation-label">Transform a Community</div>
+                <ul class="donation-benefits">
+                    <li>Fund 4 complete beds</li>
+                    <li>Certificate of recognition</li>
+                    <li>Dedicated impact report</li>
+                    <li>Personal thank you call</li>
+                    <li>Name listed on website</li>
+                </ul>
+                <button class="btn-donate" onclick="alert('Redirecting to donation platform...')">
+                    Donate $1000+
+                </button>
+            </div>
+        </div>
+
+        <div class="monthly-support" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h4>💙 Become a Monthly Supporter</h4>
+            <p>Commit $20/month to ensure ongoing maintenance, training, and sustainability of the Bed Project across communities.</p>
+            <button class="btn-donate" style="width: auto; padding: 10px 24px;" onclick="alert('Redirecting to monthly giving...')">
+                Set Up Monthly Giving
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+    <div class="container-lg">
+        <h3>Want to Learn More About Greg's Other Leadership Roles?</h3>
+        <p style="color: var(--medium-text); margin-bottom: 1.5rem;">Explore his journey from Rotaract to District Governor and discover his broader impact across Rotary International.</p>
+        <a href="/about" style="display: inline-block; background: var(--primary-blue); color: white; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+            Explore His Full Journey
+        </a>
+    </div>
+</section>
+
+<!-- RELATED LEADERS (OPTIONAL) -->
+<section style="padding: 60px 0; background: white;">
+    <div class="container-lg">
+        <h2 style="margin-bottom: 2rem;">Working Alongside Greg</h2>
+        <p style="margin-bottom: 3rem; color: var(--medium-text);">The Bed Project involves collaboration with other Rotary leaders across Australia. Explore their complementary work:</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div style="background: var(--light-bg); padding: 2rem; border-radius: 12px; text-align: center;">
+                <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">Pene</h4>
+                <p style="color: var(--medium-text); font-size: 0.95rem; margin-bottom: 1rem;">E-Club President | Community Leadership</p>
+                <a href="/leaders/pene" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">Learn More →</a>
+            </div>
+            <div style="background: var(--light-bg); padding: 2rem; border-radius: 12px; text-align: center;">
+                <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">Victoria Porter</h4>
+                <p style="color: var(--medium-text); font-size: 0.95rem; margin-bottom: 1rem;">Kenya Programs | Gender Justice</p>
+                <a href="/leaders/victoria-porter" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">Learn More →</a>
+            </div>
+            <div style="background: var(--light-bg); padding: 2rem; border-radius: 12px; text-align: center;">
+                <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">Phil</h4>
+                <p style="color: var(--medium-text); font-size: 0.95rem; margin-bottom: 1rem;">Timor-Leste | Malaria Eradication</p>
+                <a href="/leaders/phil-timor" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">Learn More →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER (Standard) -->
+<footer style="background: var(--primary-blue); color: white; padding: 3rem 0; text-align: center;">
+    <div class="container-lg">
+        <p style="margin-bottom: 1rem;">© 2024 Rotary E-Club of Outback Australia. All rights reserved.</p>
+        <p style="color: rgba(255, 255, 255, 0.7);">
+            <a href="/" style="color: white; text-decoration: none; margin: 0 1rem;">Home</a> | 
+            <a href="/contact" style="color: white; text-decoration: none; margin: 0 1rem;">Contact</a> | 
+            <a href="/privacy" style="color: white; text-decoration: none; margin: 0 1rem;">Privacy</a>
+        </p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

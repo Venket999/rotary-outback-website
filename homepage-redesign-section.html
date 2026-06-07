@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotary E-Club Outback Australia — Serving Communities</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --accent-gold: #D4AF37;
+            --light-bg: #F5F7FA;
+            --dark-text: #1A1A1A;
+            --medium-text: #4A4A4A;
+            --light-text: #757575;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+        }
+
+        h2 { font-size: 2rem; margin-bottom: 2rem; }
+
+        /* HERO (Keep as-is from original) */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 51, 102, 0.5)), 
+                        url('/img/hero-hands.jpg') center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary-hero {
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 0.5rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-hero:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+
+        .btn-secondary-hero {
+            background: transparent;
+            color: white;
+            padding: 12px 32px;
+            border: 2px solid white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 0.5rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-hero:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        /* SECTION PADDING */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .container-lg {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ========================
+           MEET OUR LEADERS SECTION (NEW)
+           ======================== */
+        .section-leaders {
+            background: var(--light-bg);
+            padding: 80px 0;
+        }
+
+        .section-leaders h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-leaders-subtitle {
+            text-align: center;
+            color: var(--medium-text);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .leader-card-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--primary-blue), #004080);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .leader-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-card-image.placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .leader-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .leader-card-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .leader-card-role {
+            font-size: 0.95rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leader-card-impact {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .leader-card-description {
+            color: var(--medium-text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .leader-card-ctas {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .leader-card-ctas a {
+            flex: 1;
+            padding: 10px 16px;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .leader-link {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .leader-link:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+
+        .leader-donate {
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            background: transparent;
+        }
+
+        .leader-donate:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* ========================
+           CAMPAIGNS CAROUSEL (NEW)
+           ======================== */
+        .section-campaigns {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .campaigns-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .campaign-carousel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .campaign-card {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .campaign-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .campaign-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .campaign-progress {
+            margin: 1.5rem 0;
+        }
+
+        .progress-bar-bg {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--accent-gold);
+            border-radius: 4px;
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .campaign-cta {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .campaign-cta:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        /* ========================
+           RESPONSIVE
+           ======================== */
+        @media (max-width: 768px) {
+            .leaders-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .leader-card-ctas {
+                flex-direction: column;
+            }
+
+            .leader-card-ctas a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO SECTION (Keep existing) -->
+<section class="hero-banner">
+    <div class="container-lg">
+        <div class="hero-content">
+            <h1>Serving Communities Across the Outback</h1>
+            <p>Rotary E-Club of Outback Australia connects passionate individuals across borders to create lasting change in communities that need it most. We are a community without borders.</p>
+            <a href="#donate" class="btn-primary-hero">Donate Now</a>
+            <a href="#leaders" class="btn-secondary-hero">Meet Our Leaders</a>
+        </div>
+    </div>
+</section>
+
+<!-- CAMPAIGNS SECTION (NEW - Add before "Meet Our Leaders") -->
+<section class="section-campaigns">
+    <div class="container-lg">
+        <h2 class="campaigns-title">🎯 Current Campaigns</h2>
+        
+        <div class="campaign-carousel">
+            <!-- Campaign 1 -->
+            <div class="campaign-card">
+                <div class="campaign-icon">🛏️</div>
+                <div class="campaign-title">The Bed Project</div>
+                <p style="margin-bottom: 1rem; font-size: 0.95rem;">Transform plastic waste into dignity for remote Australian communities. Led by Greg Marlow.</p>
+                <div class="campaign-progress">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 67%"></div>
+                    </div>
+                    <div class="progress-text">67% Funded — $67,816 USD needed</div>
+                </div>
+                <a href="/leaders/greg-marlow#donate" class="campaign-cta">Support the Project</a>
+            </div>
+
+            <!-- Campaign 2 -->
+            <div class="campaign-card">
+                <div class="campaign-icon">💙</div>
+                <div class="campaign-title">Polio Eradication</div>
+                <p style="margin-bottom: 1rem; font-size: 0.95rem;">End Polio by 2026. Tamara's fundraising initiative is making real progress.</p>
+                <div class="campaign-progress">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 45%"></div>
+                    </div>
+                    <div class="progress-text">45% of annual goal — Donations matched 2:1</div>
+                </div>
+                <a href="/leaders/tamara-polio#donate" class="campaign-cta">Support End Polio</a>
+            </div>
+
+            <!-- Campaign 3 -->
+            <div class="campaign-card">
+                <div class="campaign-icon">👩‍⚖️</div>
+                <div class="campaign-title">Kenya Gender Justice</div>
+                <p style="margin-bottom: 1rem; font-size: 0.95rem;">Transforming lives through maternal health, education & dignity. Led by Victoria Porter.</p>
+                <div class="campaign-progress">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 72%"></div>
+                    </div>
+                    <div class="progress-text">72% Funded — Scaling programs to new regions</div>
+                </div>
+                <a href="/leaders/victoria-porter#donate" class="campaign-cta">Support Kenya Programs</a>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="/donate" style="display: inline-block; background: var(--primary-blue); color: white; padding: 14px 36px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem;">
+                View All Campaigns →
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- MEET OUR LEADERS SECTION (NEW - Replaces "Core Pillars") -->
+<section class="section-leaders" id="leaders">
+    <div class="container-lg">
+        <h2>Meet Our Leaders</h2>
+        <p class="section-leaders-subtitle">
+            Six dedicated Rotarians driving transformative work across Australia, Cambodia, Kenya, and Timor-Leste. Each has a unique vision. All share one mission: serve humanity.
+        </p>
+
+        <div class="leaders-grid">
+            <!-- Leader 1: Greg Marlow -->
+            <div class="leader-card">
+                <div class="leader-card-image placeholder">
+                    <!-- Replace with: <img src="/img/leaders/greg-marlow.jpg" alt="Greg Marlow"> -->
+                    👨‍💼
+                </div>
+                <div class="leader-card-content">
+                    <div class="leader-card-name">Greg Marlow</div>
+                    <div class="leader-card-role">District Governor 2025-26</div>
+                    <div class="leader-card-impact">100+ beds installed</div>
+                    <div class="leader-card-description">
+                        30+ years in Rotary. Transformed the Bed Project from vision into reality—providing safe sleeping spaces for remote Australian communities while creating local employment.
+                    </div>
+                    <div class="leader-card-ctas">
+                        <a href="/leaders/greg-marlow" class="leader-link">Learn More</a>
+                        <a href="/leaders/greg-marlow#donate" class="leader-donate">Donate</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 2: Victoria Porter -->
+            <div class="leader-card">
+                <div class="leader-card-image placeholder">
+                    <!-- Replace with: <img src="/img/leaders/victoria-porter.jpg" alt="Victoria Porter"> -->
+                    👩‍💼
+                </div>
+                <div class="leader-card-content">
+                    <div class="leader-card-name">Victoria Porter</div>
+                    <div class="leader-card-role">Kenya Programs Leader</div>
+                    <div class="leader-card-impact">3,400+ youth mentored</div>
+                    <div class="leader-card-description">
+                        Paul Harris Fellow. Leading integrated programs addressing gender justice, maternal health, and youth empowerment across Kenya with proven impact and deep local partnerships.
+                    </div>
+                    <div class="leader-card-ctas">
+                        <a href="/leaders/victoria-porter" class="leader-link">Learn More</a>
+                        <a href="/leaders/victoria-porter#donate" class="leader-donate">Donate</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 3: Barry -->
+            <div class="leader-card">
+                <div class="leader-card-image placeholder">
+                    <!-- Replace with: <img src="/img/leaders/barry.jpg" alt="Barry"> -->
+                    👨‍💼
+                </div>
+                <div class="leader-card-content">
+                    <div class="leader-card-name">Barry</div>
+                    <div class="leader-card-role">Cambodia Initiative</div>
+                    <div class="leader-card-impact">Water, schools & clinics</div>
+                    <div class="leader-card-description">
+                        Building essential infrastructure across Cambodia. From water wells to schools, Barry's work with Vision Cambodia and LRDE breaks poverty cycles in rural communities.
+                    </div>
+                    <div class="leader-card-ctas">
+                        <a href="/leaders/barry-cambodia" class="leader-link">Learn More</a>
+                        <a href="/leaders/barry-cambodia#donate" class="leader-donate">Donate</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 4: Tamara -->
+            <div class="leader-card">
+                <div class="leader-card-image placeholder">
+                    <!-- Replace with: <img src="/img/leaders/tamara.jpg" alt="Tamara"> -->
+                    👩‍💼
+                </div>
+                <div class="leader-card-content">
+                    <div class="leader-card-name">Tamara</div>
+                    <div class="leader-card-role">Polio Eradication Champion</div>
+                    <div class="leader-card-impact">Polio Plus Society member</div>
+                    <div class="leader-card-description">
+                        Driven by her grandmother's story. Leading sustained fundraising to eliminate polio globally. Donations matched 2:1 by Gates Foundation—every dollar doubles its impact.
+                    </div>
+                    <div class="leader-card-ctas">
+                        <a href="/leaders/tamara-polio" class="leader-link">Learn More</a>
+                        <a href="/leaders/tamara-polio#donate" class="leader-donate">Donate</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 5: Pene -->
+            <div class="leader-card">
+                <div class="leader-card-image placeholder">
+                    <!-- Replace with: <img src="/img/leaders/pene.jpg" alt="Pene"> -->
+                    👨‍💼
+                </div>
+                <div class="leader-card-content">
+                    <div class="leader-card-name">Pene</div>
+                    <div class="leader-card-role">E-Club President</div>
+                    <div class="leader-card-impact">20+ years of service</div>
+                    <div class="leader-card-description">
+                        Leading the club with visionary projects. Paul Harris Fellow who steers the Bed Project and champions community engagement, ensuring Rotary's mission reaches those who need it most.
+                    </div>
+                    <div class="leader-card-ctas">
+                        <a href="/leaders/pene" class="leader-link">Learn More</a>
+                        <a href="/leaders/pene#donate" class="leader-donate">Donate</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 6: Phil -->
+            <div class="leader-card">
+                <div class="leader-card-image placeholder">
+                    <!-- Replace with: <img src="/img/leaders/phil.jpg" alt="Phil Dempster"> -->
+                    👨‍💼
+                </div>
+                <div class="leader-card-content">
+                    <div class="leader-card-name">Phil Dempster</div>
+                    <div class="leader-card-role">Timor-Leste Victory</div>
+                    <div class="leader-card-impact">Malaria Free (2025)</div>
+                    <div class="leader-card-description">
+                        51 years in Rotary. Mobilized $850K+ to help declare Timor-Leste malaria-free. Former District Governor driving malaria elimination across Southeast Asia and beyond.
+                    </div>
+                    <div class="leader-card-ctas">
+                        <a href="/leaders/phil-timor" class="leader-link">Learn More</a>
+                        <a href="/leaders/phil-timor#donate" class="leader-donate">Donate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REST OF PAGE (Keep existing sections: "A New Era of Fellowship", "Upcoming Activities", "Impact in Action", etc.) -->
+
+<footer style="background: var(--primary-blue); color: white; padding: 2rem 0; text-align: center;">
+    <div class="container-lg">
+        <p>© 2024 Rotary E-Club of Outback Australia. Serving communities without borders.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
