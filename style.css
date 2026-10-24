@@ -153,8 +153,7 @@
         /* Navbar Styling */
         .navbar {
             background-color: var(--surface-container-lowest);
-            border-bottom: 1px solid var(--outline-variant);
-            height: 80px;
+            border-bottom: 1px solid var(--outline-variant);            
             box-shadow: none;
             padding: 0 var(--margin-desktop);
         }
@@ -185,6 +184,12 @@
             color: var(--bs-primary) !important;
             border-bottom-color: var(--bs-primary);
         }
+
+        
+
+       
+
+
 
         .btn-primary {
             background-color: var(--bs-primary);
@@ -231,8 +236,7 @@
             min-height: 600px;
             display: flex;
             align-items: center;
-            overflow: hidden;
-            margin-top: 80px;
+            overflow: hidden;            
         }
 
         .hero-section::before {
@@ -688,3 +692,80 @@
             color: var(--on-surface-variant);
             font-weight: 600;
         }
+
+
+
+
+
+        .navbar-custom {
+    background: #fff;
+    box-shadow: 0 .5rem 1rem #00000026, inset 0 -1px #ffffff26;
+}
+
+.navbar-custom .container-max {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar-custom .navbar-brand {
+    min-width: 0;
+    margin-right: auto;
+}
+
+.navbar-custom .brand-logo {
+    max-width: 300px;    
+}
+
+.navbar-custom .brand-text {
+    white-space: nowrap;
+    font-size: 1.1rem;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    white-space: nowrap;
+}
+
+@media (max-width: 767.98px) {
+    .navbar-custom .navbar-collapse {
+        width: 100%;
+        flex-basis: 100%;
+        margin-top: 0.75rem;
+    }
+
+    .navbar-custom .navbar-nav {
+        align-items: flex-start !important;
+    }
+
+    .navbar-custom .brand-logo {
+        max-width: 160px;
+        height: 42px;
+    }
+
+    .navbar-custom .brand-text {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-custom .container-max {
+        flex-wrap: nowrap;
+    }
+
+    .navbar-custom .navbar-collapse {
+        width: auto !important;
+        flex-basis: auto;
+        display: flex !important;
+        justify-content: flex-end;
+    }
+
+    .navbar-custom .navbar-nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .navbar-custom .nav-item {
+        flex-shrink: 0;
+    }
+}
